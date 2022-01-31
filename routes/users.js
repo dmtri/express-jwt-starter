@@ -42,4 +42,13 @@ router.post('/register', validate(register), async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+      res.status(201).json({ test: 'hello '});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({error});
+  }
+});
+
 module.exports = router;
